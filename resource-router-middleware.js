@@ -44,7 +44,7 @@ module.exports = function ResourceRouter(route) {
       url = ~keyed.indexOf(key) ? "/:" + route.id : "/";
       router[fn](url, route[key]);
     } else if (typeof route[key] === "function") {
-      router.put(`/${key}/:${route.id}`, route[key]);
+      router.patch(`/${key}/:${route.id}`, route[key]);
     }
   }
 
